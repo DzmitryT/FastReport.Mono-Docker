@@ -1,0 +1,14 @@
+version: "2"
+services:
+    fastreport:
+        container_name: frmono
+        image: debian-stretch-mono:latest
+        volumes:
+            - ./.x11-unixsoc:/tmp/.X11-unix
+        ports:
+            - "127.0.0.1:8085:80"            
+    xorg:
+        container_name: x11dummy
+        image: debian-stretch-x11dummy:latest
+        volumes:
+            - ./.x11-unixsoc:/tmp/.X11-unix
