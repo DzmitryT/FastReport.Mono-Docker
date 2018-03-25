@@ -1,5 +1,5 @@
 [Unit]
-Description=FastReport Docker
+Description=FastReport Docker Service
 Requires=docker.service
 After=docker.service
  
