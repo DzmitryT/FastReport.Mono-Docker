@@ -1,0 +1,18 @@
+[Unit]
+Description=FastReport Docker
+Requires=docker.service
+After=docker.service
+ 
+[Service]
+Restart=always
+ExecStart=/usr/local/bin/docker-compose -f /opt/frdocker/docker-compose.yml start
+ExecStop=/usr/local/bin/docker-compose -f /opt/frdocker/docker-compose.yml stop
+ 
+[Install]
+WantedBy=multi-user.target
+</source>
+</spoiler>
+Во-вторых, зарегистрировать сервис в системе и "включить" его:
+<source>
+systemctl daemon-reload
+systemctl enable docker-frmono
